@@ -1,0 +1,15 @@
+node_modules
+dist
+.env
+.env.*
+!.env.example
+.circle
+recovery_file*
+*.log
+traces.jsonl
+console.jsonl
+
+# Build output
+contracts/cache
+hardhat-artifacts
+hardhat-cache

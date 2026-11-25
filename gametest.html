@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><body style="margin:0;background:#000"><div id="g" style="position:fixed;inset:0"></div>
+<script type="module">
+import { createGame } from '/src/game/Game.ts'
+import { createHudStore } from '/src/game/bus.ts'
+const hud = createHudStore()
+const touch = { x: 0, y: 0, fire: true }
+window.__hud = hud
+window.__over = null
+window.__touch = touch
+window.__h = createGame({ parent: document.getElementById('g'), touch, hud, onGameOver: (s) => { window.__over = s } })
+</script></body></html>

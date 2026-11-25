@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: 'DM Sans', sans-serif;
+  color: #e6ecff;
+  background: #040818;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+@layer components {
+  .glass {
+    background: linear-gradient(180deg, rgba(18, 28, 76, 0.62), rgba(8, 14, 42, 0.62));
+    border: 1px solid rgba(125, 160, 255, 0.16);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0 1.25rem;
+    border-radius: 0.875rem;
+    font-weight: 600;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+    touch-action: manipulation;
+  }
+
+  .btn:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    color: #04101f;
+    background: linear-gradient(135deg, #38bdf8, #a78bfa);
+    box-shadow: 0 0 28px rgba(56, 189, 248, 0.3);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    box-shadow: 0 0 36px rgba(167, 139, 250, 0.5);
+  }
+
+  .btn-ghost {
+    color: #cfd8ff;
+    background: rgba(125, 160, 255, 0.08);
+    border: 1px solid rgba(125, 160, 255, 0.2);
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background: rgba(125, 160, 255, 0.16);
+  }
+
+  .label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #8b97c4;
+  }
+}
+
+.starfield {
+  background-image: radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 70% 20%, rgba(186, 214, 255, 0.6), transparent),
+    radial-gradient(1.5px 1.5px at 40% 80%, rgba(196, 181, 253, 0.7), transparent),
+    radial-gradient(1px 1px at 85% 65%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 10% 70%, rgba(125, 211, 252, 0.6), transparent),
+    radial-gradient(1.5px 1.5px at 55% 45%, rgba(255, 255, 255, 0.5), transparent);
+  background-size: 340px 340px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
